@@ -420,7 +420,6 @@ namespace MorskiShah
         {
             Status = Status.Ouser;
             Reset();
-            CPU();
         }
 
 
