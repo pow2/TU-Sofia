@@ -227,26 +227,6 @@ namespace MorskiShah
             lblCScore.Text = brC.ToString();
         }
 
-        //all buttons
-       /* private void btn_Click(object sender, EventArgs e)
-        {
-            Button b = (Button)sender;
-
-            switch (Status)
-            {
-                case Status.Xuser: b.Text = "X";
-                    break;
-                case Status.Ouser: b.Text = "O";
-                    break;
-                default:
-                    break;
-            }
-
-            b.Enabled = false;
-            
-            if (VictoryCheck() == 0) CPU();
-
-        }*/
         private void btn1_Click(object sender, EventArgs e)
         {
             switch (Status)
