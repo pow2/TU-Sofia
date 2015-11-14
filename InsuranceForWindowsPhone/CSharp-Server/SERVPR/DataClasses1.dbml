@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True" SettingsObjectName="SERVPL.Properties.Settings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ZAST" Member="ZASTs">
+    <Type Name="ZAST">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LName" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CarNum" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CarBrand" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CarModel" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CarType" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CarAddinfo" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ExpireDateDay" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ExpireDateMonth" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ExpireDateYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="employee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="User_ZAST" Member="User" ThisKey="employee" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pass" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_ZAST" Member="ZASTs" ThisKey="Id" OtherKey="employee" Type="ZAST" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AddNewZast" Method="AddNewZast">
+    <Parameter Name="fName" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="lName" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="carNum" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="carBrand" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="carModel" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="carType" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="carAddinfo" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="expireDateDay" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="expireDateMonth" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="expireDateYear" Type="System.Int32" DbType="Int" />
+    <Parameter Name="eemployee" Type="System.Int32" DbType="Int" />
+    <Parameter Name="price" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="city" Type="System.Int16" DbType="SmallInt" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
