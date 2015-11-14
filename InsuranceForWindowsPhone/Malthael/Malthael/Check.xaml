@@ -1,0 +1,82 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Malthael.Check"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Информационна система за застраховки" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Center" />
+            <TextBlock x:Name="PageTitle" Text="Проверка" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" TextAlignment="Center" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="6,70,0,0" Name="txtName" Text="" VerticalAlignment="Top" Width="219" Foreground="Black" TextAlignment="Center">
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0" />
+                        <GradientStop Color="#1EFFFFFF" Offset="1" />
+                        <GradientStop Color="#39FFFFFF" Offset="0.884" />
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="6,200,0,0" Name="txtNumber" Text="" VerticalAlignment="Top" Width="444" Foreground="Black" TextAlignment="Center">
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0" />
+                        <GradientStop Color="#1EFFFFFF" Offset="1" />
+                        <GradientStop Color="#39FFFFFF" Offset="0.884" />
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <Button Content="Изпрати" Height="72" HorizontalAlignment="Right" Margin="0,299,65,0" Name="btn4Sent" VerticalAlignment="Top" Width="160" FontSize="25.333" Background="#48FFFFFF" Click="btn4Sent_Click" />
+            <Button Content="Назад" Height="72" HorizontalAlignment="Left" Margin="59,299,0,0" Name="btn5Back" VerticalAlignment="Top" Width="160" Click="btn5Back_Click" Background="#48FFFFFF" />
+            <TextBlock Height="212" HorizontalAlignment="Left" Margin="12,377,0,0" Name="txtbl6" Text="" VerticalAlignment="Top" Width="435" TextAlignment="Center" FontSize="28" DataContext="{Binding}" />
+            <TextBlock Height="41" HorizontalAlignment="Left" Margin="73,23,0,0" Name="txtbl4" Text="Име" VerticalAlignment="Top" FontSize="30" Width="73" />
+            <TextBlock Height="37" HorizontalAlignment="Left" Margin="85,153,0,0" Name="txtbl3" Text="Номер на автомобил" VerticalAlignment="Top" FontSize="30" Width="319" />
+            <TextBox Foreground="Black" Height="72" HorizontalAlignment="Left" Margin="220,70,0,0" Name="txtLastName" Text="" TextAlignment="Center" VerticalAlignment="Top" Width="227">
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0" />
+                        <GradientStop Color="#1EFFFFFF" Offset="1" />
+                        <GradientStop Color="#39FFFFFF" Offset="0.884" />
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <TextBlock Height="41" HorizontalAlignment="Left" Margin="269,23,0,0" Name="txtbl5" Text="Фамилия" VerticalAlignment="Top" FontSize="30" Width="135" />
+        </Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Malthael;component/Images/seamlesstexture12_1200.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

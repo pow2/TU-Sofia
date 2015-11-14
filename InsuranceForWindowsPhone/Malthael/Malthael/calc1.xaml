@@ -1,0 +1,99 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Malthael.calc1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Изчисли цена за застраховка" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Center" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ListBox Height="292" HorizontalAlignment="Stretch" Margin="6,51,6,0" Name="lbType" VerticalAlignment="Top" Width="444" ItemsSource="{Binding}" Background="Transparent" BorderBrush="#86FFFFFF" BorderThickness="0">
+                <ListBox.Items>
+                    <ListBoxItem Content="Лек автомобил" HorizontalContentAlignment="Center" />
+                    <ListBoxItem Content="Товарен автомобил" HorizontalContentAlignment="Center" />
+                    <ListBoxItem Content="Седлов влекач" HorizontalContentAlignment="Center" />
+                    <ListBoxItem Content="Мотоциклет и АТБ" HorizontalContentAlignment="Center" />
+                    <ListBoxItem Content="Товарно ремарке" HorizontalContentAlignment="Center" />
+                    <ListBoxItem Content="Багажнно или къмпинг ремарке" HorizontalContentAlignment="Center" />
+                    <ListBoxItem Content="Автобус" HorizontalContentAlignment="Center" />
+                    <ListBoxItem Content="Тролейбус трамвайна мотриса" HorizontalContentAlignment="Center" />
+                    <ListBoxItem Content="Земеделска и горска техника" HorizontalContentAlignment="Center" />
+                    <ListBoxItem Content="Строителна техника" HorizontalContentAlignment="Center" />
+                </ListBox.Items>
+            </ListBox>
+            <TextBlock Height="50" HorizontalAlignment="Stretch" Margin="198,2,186,0" Name="tbox1" Text="Вид" VerticalAlignment="Top" FontSize="36" Width="72" Foreground="White" TextAlignment="Center" />
+            <Button Content="Назад" Height="72" HorizontalAlignment="Left" Margin="42,603,0,0" Name="btn9" VerticalAlignment="Top" Width="160" Click="btn9_Click" />
+            <Button Content="Напред" Height="72" HorizontalAlignment="Right" Margin="0,603,42,0" Name="btn10" VerticalAlignment="Top" Width="160" Click="btn10_Click" />
+            <ListBox Background="Transparent" BorderBrush="#86FFFFFF" BorderThickness="0" Height="148" HorizontalAlignment="Center" ItemsSource="{Binding}" Margin="6,403,6,0" Name="lbCity" VerticalAlignment="Top" Width="444">
+                <ListBoxItem Content="София" HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Бургас" HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Варна" HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Пловдив" HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Друго" HorizontalContentAlignment="Center" />
+            </ListBox>
+            <TextBlock FontSize="36" Foreground="White" Height="50" HorizontalAlignment="Stretch" Margin="91,349,72,0" Name="tbox2" Text="Населено Място" TextAlignment="Center" VerticalAlignment="Top" Width="293" />
+            <ListBox Background="Transparent" BorderBrush="#86FFFFFF" BorderThickness="0" Height="291" HorizontalAlignment="Stretch" ItemsSource="{Binding}" Margin="6,52,6,0" Name="lbAvt" VerticalAlignment="Top" Width="444" IsEnabled="False" Visibility="Collapsed">
+                <ListBoxItem Content="Лек автомобил до 1300 куб. см." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Лек автомобил до 1500 куб. см." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Лек автомобил до 1600 куб. см." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Лек автомобил до 1800 куб. см." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Лек автомобил до 2000 куб. см." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Лек автомобил до 2500 куб. см." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Лек автомобил над 2500 куб. см." HorizontalContentAlignment="Center" />
+                </ListBox>
+            <ListBox Background="Transparent" BorderBrush="#86FFFFFF" BorderThickness="0" Height="292" HorizontalAlignment="Stretch" ItemsSource="{Binding}" Margin="6,51,6,0" VerticalAlignment="Top" Width="444" IsEnabled="False" Name="lbTovavt" Visibility="Collapsed">
+                <ListBoxItem Content="Товарен автомобил до 1,5 т." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Товарен автомобил до 3,5 т." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Товарен автомобил до 5 т." HorizontalContentAlignment="Center" IsEnabled="True" />
+                <ListBoxItem Content="Товарен автомобил до 10 т." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Товарен автомобил до 20 т." HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Товарен автомобил над 20 т." HorizontalContentAlignment="Center" />
+            </ListBox>
+            <ListBox Background="Transparent" BorderBrush="#86FFFFFF" BorderThickness="0" Height="292" HorizontalAlignment="Stretch" ItemsSource="{Binding}" Margin="6,51,6,0" Name="lbBus" VerticalAlignment="Top" Width="444" Visibility="Collapsed" IsEnabled="False">
+                <ListBoxItem Content="Автобус до 20 места" HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Автобус от 21 до 40 места" HorizontalContentAlignment="Center" />
+                <ListBoxItem Content="Автобус над 40 места" HorizontalContentAlignment="Center" />
+            </ListBox>
+            <TextBlock HorizontalAlignment="Stretch" Margin="25,150,27,475" Name="tbox3" Text="Сумата, която трябва" VerticalAlignment="Top" FontSize="40" TextAlignment="Center" Visibility="Collapsed" />
+            <TextBlock FontSize="40" HorizontalAlignment="Stretch" Margin="25,200,27,0" Name="tbox4" Text="да платите е:" TextAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed" />
+            <TextBlock FontSize="40" HorizontalAlignment="Stretch" Margin="10,250,42,0" Name="tbox5" Text="" TextAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed" />
+            <Button Content="Застраховай" Height="72" HorizontalAlignment="Right" Margin="0,603,18,0" Name="btnZ" VerticalAlignment="Top" Width="213" Click="button1_Click" Visibility="Collapsed" />
+        </Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Malthael;component/Images/seamlesstexture12_1200.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
