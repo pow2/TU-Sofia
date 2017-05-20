@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="Soul.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Soul"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="640" Width="360" MinWidth="360" MinHeight="640" MaxWidth="360" MaxHeight="640" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+
+    <Grid Background="#FF180029">
+        <Image Margin="10,10,10,0" Source="Resources/InfSys.png" Height="100" VerticalAlignment="Top" Stretch="None"/>
+        <Image x:Name="imgCheck" Margin="10,131,10,0" Source="Resources/ProvZaValid.png" Tapped="imgCheck_Tapped" Height="100" VerticalAlignment="Top" Stretch="None" />
+        <Image x:Name="imgCalc" Margin="10,236,10,0" Source="Resources/Calc.png" Tapped="imgCalc_Tapped" Height="100" VerticalAlignment="Top" Stretch="None"/>
+        <Image x:Name="imgMakeAp" Margin="10,341,10,0" Source="Resources/ZapChas.png" Tapped="imgMakeAp_Tapped" Height="100" VerticalAlignment="Top" Stretch="None"/>
+        <Image x:Name="imgSett" Margin="10,460,206,0" Source="Resources/sett.png" Height="100" VerticalAlignment="Top" Tapped="Image_Tapped" Stretch="None"/>
+        <Image x:Name="imgExit" Margin="208,460,10,0" Source="Resources/BtnExit.png" Tapped="imgExit_Tapped" Height="100" VerticalAlignment="Top" Stretch="None"/>
+    </Grid>
+</Page>

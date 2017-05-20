@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="Soul.Pages.Calc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Soul.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="640" Width="360" MinWidth="360" MinHeight="640" MaxWidth="360" MaxHeight="640" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+
+    <Grid Background="#FF180029">
+        <Image Margin="10,10,10,0" Source="ms-appx:///Resources/CalcTop.png" Height="100" VerticalAlignment="Top"/>
+        <Image x:Name="imgBack" Margin="10,484,205,0" Source="ms-appx:///Resources/BtnBack.png" Height="100" Tapped="imgBack_Tapped" VerticalAlignment="Top" />
+        <Image x:Name="imgCalc" Margin="210,484,10,0" Source="ms-appx:///Resources/BtnCalc.png" Height="100" VerticalAlignment="Top" Tapped="imgCalc_Tapped"/>
+        <ComboBox x:Name="cbCities" HorizontalAlignment="Stretch" Margin="10,160,10,0" VerticalAlignment="Top" Foreground="White" Background="#FF3E3092" BorderBrush="#FF230F99" FontFamily="Impact" FontSize="20"/>
+        <ComboBox x:Name="cbVehicles" HorizontalAlignment="Stretch" Margin="10,245,10,0" VerticalAlignment="Top" Foreground="White" Background="#FF3E3092" BorderBrush="#FF230F99" FontFamily="Impact" FontSize="20" SelectionChanged="cbVehicles_SelectionChanged"/>
+        <TextBlock x:Name="tb1" Margin="152,125,148,0" TextWrapping="Wrap" Text="Град" FontFamily="Impact" RenderTransformOrigin="0.464,0.583" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Width="60"/>
+        <TextBlock x:Name="tb2" Margin="97,208,75,0" TextWrapping="Wrap" Text="Превозно средство" FontFamily="Impact" FontSize="20" VerticalAlignment="Top" Width="188" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="cbCapacity" HorizontalAlignment="Stretch" Margin="10,328,10,0" VerticalAlignment="Top" Foreground="White" Background="#FF3E3092" BorderBrush="#FF230F99" FontFamily="Impact" FontSize="20"/>
+        <TextBlock x:Name="tb3" Margin="154,293,148,0" TextWrapping="Wrap" Text="Обем" FontFamily="Impact" RenderTransformOrigin="0.464,0.583" FontSize="20" VerticalAlignment="Top" Width="58" HorizontalAlignment="Center" Height="25"/>
+        <TextBox x:Name="tbResp" Margin="10,381,10,0" TextWrapping="Wrap" Text="" Background="#FF3E3092" BorderBrush="#FF230F99" Height="77" VerticalAlignment="Top" IsReadOnly="True" IsEnabled="False"/>
+    </Grid>
+</Page>

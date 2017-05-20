@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="Soul.Pages.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Soul.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="640" Width="360" MinWidth="360" MinHeight="640" MaxWidth="360" MaxHeight="640" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+
+    <Grid Background="#FF180029">
+        <Image Margin="10,10,10,0" Source="ms-appx:///Resources/sett.png" Width="340" Height="238" VerticalAlignment="Top"/>
+        <Image x:Name="imgBack" Margin="10,484,205,0" Source="ms-appx:///Resources/BtnBack.png" Height="100" Tapped="imgBack_Tapped" VerticalAlignment="Top" />
+        <Image x:Name="imgGo" Margin="210,484,10,0" Source="ms-appx:///Resources/BtnGo.png" Height="100" VerticalAlignment="Top" Tapped="imgGo_Tapped" />
+        <TextBox x:Name="tbxIP" HorizontalAlignment="Stretch" Margin="10,310,10,0" VerticalAlignment="Top" Foreground="White" Background="#FF3E3092" BorderBrush="#FF230F99" FontFamily="Impact" FontSize="20"/>
+        <TextBox x:Name="tbxPort" HorizontalAlignment="Stretch" Margin="10,395,10,0" VerticalAlignment="Top" Foreground="White" Background="#FF3E3092" BorderBrush="#FF230F99" FontFamily="Impact" FontSize="20"/>
+        <TextBlock x:Name="tb1" Margin="152,275,148,0" TextWrapping="Wrap" Text="Адрес" FontFamily="Impact" RenderTransformOrigin="0.464,0.583" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Width="60"/>
+        <TextBlock x:Name="tb2" Margin="152,358,148,0" TextWrapping="Wrap" Text="Порт" FontFamily="Impact" RenderTransformOrigin="0.464,0.583" FontSize="20" VerticalAlignment="Top" Width="60" HorizontalAlignment="Center"/>
+    </Grid>
+</Page>
