@@ -32,7 +32,8 @@ public class CheckifactiveHandler implements HttpHandler {
         try {
             CheckIfActiveStructure str = null;
             str = JsonConvertor.fromJson(request, CheckIfActiveStructure.class);
-            if (!SanityCheck.noEsc(str.getNumber())){
+            if (SanityCheck.noEsc(str.getNumber())){
+                str.setDate(DBHandler.getInsuranceEndDate(str.getNumber(), params));
                 str.setStatus("Bad data");
                 response = JsonConvertor.toJson(str);
                 return response;
