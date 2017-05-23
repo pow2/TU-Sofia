@@ -130,12 +130,13 @@ public class DBHandler {
             return  endDate;
         }
         MySQLConnector connector = params.getDBConnection();
+        connector.createStatement();
         ResultSet rs = connector.executeQuery("SELECT * FROM \n" +
                 "plea.insurance ins, " +
                 "plea.vehicles veh " +
                 "WHERE ins.vehicle = veh.id " +
                 "AND veh.registration_plate = '" + plateNumber + "' " +
-                "AND ins.enddate > DATE_FORMAT(sysdate(), \"%Y%m%d%h%i%s000\");");
+                "AND ins.enddate > DATE_FORMAT(sysdate(), '%Y%m%d%h%i%s000');");
         if (rs != null){
             try {
                 if (rs.next())
