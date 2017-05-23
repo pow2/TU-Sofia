@@ -171,6 +171,7 @@ namespace Soul.Controller
             string forSend = JsonController.JsonSerializer<AppointmentCreator>(cStr);
             HTTPConnector httpCon = new HTTPConnector(meta.Cdata);
             httpCon.SendToAsync(forSend, Endpoints.APPOINTMENT3_EP, sender);
+            CalendarManager.CreateCalendarAppointmentAsync(AppDTM, OfficeName, sender);
             state = 3;
         }
 
